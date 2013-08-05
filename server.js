@@ -44,7 +44,7 @@ app.use('/static', require('stylus').middleware(path.join(__dirname + '/static')
 app.use('/static', express['static'](path.join(__dirname, '/static')));
 
 // mongoose setup
-//mongoose.connect(config.MONGO_URI);
+mongoose.connect(config.MONGO_URI);
 
 // development mode only
 if ('development' === app.get('env')) {
