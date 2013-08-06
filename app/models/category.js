@@ -4,8 +4,8 @@ var Schema = mongoose.Schema;
 
 var categorySchema = new Schema({
     title : String,
-    decription : String,
-    products : [mongoose.model('Product').schema],
+    description : String,
+    products : [require('./product')],
     img_url : String
 });
 

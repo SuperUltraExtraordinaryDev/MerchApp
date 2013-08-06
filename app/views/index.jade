@@ -48,7 +48,13 @@ html.no-js
     script(src='/static/js/vendor/jquery.min.js')
     script(src='/static/js/vendor/bootstrap.min.js')
     script(src='/static/js/vendor/angular/angular.min.js')
+    script(src='/static/js/vendor/angular/angular-resource.min.js')
 
     // App go here
     script(src='/static/js/app/app.js')
+    script(src='/static/js/app/directives/products.dir.js')
+    script(src='/static/js/app/services/products.svc.js')
     script(src='/static/js/app/controllers/categories.ctrl.js')
+
+    // Templates go here
+    ng-include(src="'/templates/products'")

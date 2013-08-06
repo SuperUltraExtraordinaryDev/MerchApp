@@ -24,8 +24,12 @@ var repository = function (modelName) {
     });
   };
 
-  self.FindAll = function (params, cb) {
-    self.Model.find(params).exec(cb);
+  self.FindAll = function (params, cb, lean) {
+    if (!lean) {
+        self.Model.find(params).exec(cb);
+    } else {
+        self.Model.find(params).lean().exec(cb);
+    }
   };
 
   self.Save = function (obj, cb) {
