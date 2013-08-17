@@ -15,5 +15,7 @@
   "engines": {
     "node": "v0.10.15"
   },
-  "devDependencies": {}
+    "devDependencies": {
+        "grunt": "~0.4.1"
+    }
 }
