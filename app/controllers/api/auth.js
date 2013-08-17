@@ -5,22 +5,28 @@ var repo = require('../../repositories/repository'),
 
 module.exports.login = function (req, res) {
 
+    if (req.signedCookies.user) {
+        var user = req.signedCookies.user;
+    }
+
   var login = req.body.login,
       password = req.body.password;
 
-    //res.writeHead(200, { 'Content-Type': 'application/json' });
     if (login && password) {
-        res.json(true);
+        res.json({ success : true });
     } else {
-        res.write(JSON.stringify({ success : false }));
+        res.json({ success : false });
     }
 
     res.cookie('user', login, { signed: true });
-    //res.end();
 };
 
 module.exports.logout = function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
+
+    if (req.signedCookies.user) {
+       var user = req.signedCookies.user;
+    }
+
     res.clearCookie('user', { path: '/' });
-    res.end();
+    res.json({ success : true });
 };

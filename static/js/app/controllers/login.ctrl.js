@@ -13,8 +13,9 @@
               alert('Please fill form');
           } else {
               authSvc.Login(scope.Model.Login, scope.Model.Password).then(function(res) {
-                 if (res.data.toJSON().success) {
+                 if (res.data.success) {
                      debugger
+                     authSvc.Logout();
                  }
               });
           }

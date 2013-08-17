@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('MerchApp', ['ngResource']).
+angular.module('MerchApp', ['ngResource', 'ngCookies']).
     config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
         $routeProvider.when('/', {templateUrl: '/products/categories', controller: 'CategoriesCtrl'});
         $routeProvider.when('/category/:id', {templateUrl: '/products/products', controller: 'ProductsCtrl'});
