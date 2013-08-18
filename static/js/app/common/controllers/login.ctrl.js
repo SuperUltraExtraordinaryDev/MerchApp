@@ -1,7 +1,17 @@
 'use strict';
 
 (function() {
-    var loginCtrl = function(scope, authSvc) {
+    var loginCtrl = function(scope, location, authSvc) {
+
+        var navigateToDefaultPage = function() {
+          location.path('/orders');
+        };
+
+        (function() {
+            authSvc.IsUserLoggedIn(function() {
+                navigateToDefaultPage();
+            });
+        })();
 
       scope.Model = {
           Login: '',
@@ -12,19 +22,19 @@
           if (!scope.Model.Login || !scope.Model.Password) {
               alert('Please fill form');
           } else {
-              authSvc.Login(scope.Model.Login, scope.Model.Password).then(function(res) {
-                 if (res.data.success) {
-                     debugger
-                     authSvc.Logout();
-                 }
-              });
+              authSvc.Login(scope.Model.Login, scope.Model.Password)
+                  .success(function(res) {
+                    if (res.success) {
+                      navigateToDefaultPage();
+                    }
+                  });
           }
 
 
       };
     };
 
-    loginCtrl.$inject = ['$scope', 'AuthSvc'];
+    loginCtrl.$inject = ['$scope', '$location', 'AuthSvc'];
     angular.module('MerchApp.Common').controller('LoginCtrl', loginCtrl);
 
 })();

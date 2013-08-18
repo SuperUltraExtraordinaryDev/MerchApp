@@ -21,6 +21,15 @@ module.exports.login = function (req, res) {
     res.cookie('user', login, { signed: true });
 };
 
+module.exports.isUserLoggedIn = function (req, res) {
+    if (req.signedCookies.user) {
+        var user = req.signedCookies.user;
+        res.json( { success: true, username: user });
+    } else {
+        res.json( { success: false});
+    }
+};
+
 module.exports.logout = function (req, res) {
 
     if (req.signedCookies.user) {

@@ -4,4 +4,5 @@
 angular.module('MerchApp.Admin', ['MerchApp.Common']).
     config(['$routeProvider', function(routeProvider) {
         routeProvider.when('/', {templateUrl: '/backend/login', controller: 'LoginCtrl'});
+        routeProvider.when('/orders', {templateUrl: '/backend/orders', controller: 'OrdersCtrl'});
     }]);

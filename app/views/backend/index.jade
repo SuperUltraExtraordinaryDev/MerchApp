@@ -18,10 +18,12 @@ html.no-js
     meta(name='keywords', content='keywords')
 
     link(rel='stylesheet', href='/static/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/static/css/kendo/kendo.common.min.css')
+    link(rel='stylesheet', href='/static/css/kendo/kendo.silver.min.css')
     link(rel='stylesheet', href='/static/css/admin-main.css')
 
   body(ng-app='MerchApp.Admin')
-    nav(role='navigation').navbar.navbar-fixed-top.navbar-inverse
+    nav(role='navigation', ng-controller='MenuCtrl', ng-show='CurrentUserName').navbar.navbar-fixed-top.navbar-inverse
       .navbar-header
         button(type='button', data-toggle='collapse', data-target='.navbar-admin-collapse').navbar-toggle
           span.icon-bar
@@ -45,11 +47,11 @@ html.no-js
                 a(href='#/orders') Sent Orders
         ul.nav.navbar-nav.pull-right
           li.dropdown
-            a(href='#', data-toggle='dropdown').dropdown-toggle CurrentUser.Name
+            a(href='#', data-toggle='dropdown').dropdown-toggle {{CurrentUserName}}
               b.caret
             ul.dropdown-menu
               li
-                a(href='#/logout') Sign out
+                a(href='#', ng-click='SignOut()') Sign out
 
 
     .container.ng-view
@@ -77,5 +79,7 @@ html.no-js
     script(src='/static/js/app/backend/app.js')
     // Dir
     // Ctrl
+    script(src='/static/js/app/backend/controllers/menu.ctrl.js')
+    script(src='/static/js/app/backend/controllers/orders.ctrl.js')
 
 
