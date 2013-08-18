@@ -31,11 +31,6 @@ module.exports.isUserLoggedIn = function (req, res) {
 };
 
 module.exports.logout = function (req, res) {
-
-    if (req.signedCookies.user) {
-       var user = req.signedCookies.user;
-    }
-
     res.clearCookie('user', { path: '/' });
     res.json({ success : true });
 };

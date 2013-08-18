@@ -2,23 +2,23 @@
   .col-lg-5.col-lg-offset-3
     h4 Login
     hr
-    .form-horizontal
-    .form-group
-      label.col-lg-2.control-label(for='inputEmail1') Email
-      .col-lg-10
-          input#inputEmail1.form-control(type='text', placeholder='Email', ng-model='Model.Login')
-    .clearfix
-    br
-    .form-group
-      label.col-lg-2.control-label(for='inputPassword1') Password
-      .col-lg-10
-          input#inputPassword1.form-control(type='password', placeholder='Password', ng-model='Model.Password')
-    .form-group
-      .col-lg-offset-2.col-lg-10
-          .checkbox
-              label Remember me
-                input(type='checkbox')
+    form.form-horizontal(ng-submit='SignIn()')
+        .form-group
+          label.col-lg-2.control-label(for='inputEmail1') Email
+          .col-lg-10
+              input#inputEmail1.form-control(type='text', placeholder='Email', ng-model='Model.Login', autofocus='autofocus')
+        .clearfix
+        br
+        .form-group
+          label.col-lg-2.control-label(for='inputPassword1') Password
+          .col-lg-10
+              input#inputPassword1.form-control(type='password', placeholder='Password', ng-model='Model.Password')
+        .form-group
+          .col-lg-offset-2.col-lg-10
+              .checkbox
+                  label Remember me
+                    input(type='checkbox')
 
-    .form-group
-      .col-lg-offset-2.col-lg-10
-          button.btn.btn-danger.pull-right(type='button', ng-click='SignIn()') Sign in
+        .form-group
+          .col-lg-offset-2.col-lg-10
+              button.btn.btn-danger.pull-right(type='submit') Sign in

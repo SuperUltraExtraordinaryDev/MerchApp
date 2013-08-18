@@ -7,10 +7,6 @@
           location.path('/orders');
         };
 
-        (function() {
-
-        })();
-
       scope.Model = {
           Login: '',
           Password: ''
@@ -27,8 +23,6 @@
                     }
                   });
           }
-
-
       };
     };
 

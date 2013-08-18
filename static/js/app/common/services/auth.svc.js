@@ -20,10 +20,9 @@
        self.IsUserLoggedIn = function(cb) {
          http.get('/api/backend/IsUserLoggedIn').success(function(res) {
            self.IsAuthenticated = cookies.user && res.success;
-           if (self.IsAuthenticated) {
-               cb(true);
-               notifyObservers(res.username);
-           }
+           cb(self.IsAuthenticated);
+           notifyObservers(res.username);
+
          });
        };
 
