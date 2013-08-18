@@ -21,27 +21,30 @@ html.no-js
     link(rel='stylesheet', href='/static/css/admin-main.css')
 
   body(ng-app='MerchApp.Admin')
-    .container.thumbnail
-      .masthead
-        h3.text-muted MerchApp
-        .top-menu.row.thumbnail
-          .col-lg-6.col-lg-offset-3
-            ul.nav.nav-pills.nav-justified
-              li
-                a(href='#/') Contacts
-              li
-                a(href='#/Contacts') Shopping Cart
-              li
-                a(href='#/') Checkout
+    nav(role='navigation').navbar.navbar-fixed-top.navbar-inverse
+      .navbar-header
+        button(type='button', data-toggle='collapse', data-target='.navbar-admin-collapse').navbar-toggle
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a(href='#/').navbar-brand Merch Admin
 
-      .body-content
-        div.ng-view
+      .collapse.navbar-collapse.navbar-admin-collapse
+        ul.nav.navbar-nav
+          li.active
+            a(href='#/categories') Categories
+          li
+            a(href='#/products') Products
+          li.dropdown
+            a(href='#', data-toggle='dropdown').dropdown-toggle Orders
+              b.caret
+            ul.dropdown-menu
+              li
+                a(href='#/orders') New Orders
+              li
+                a(href='#/orders') Sent Orders
 
-      .footer
-        hr
-        .row
-        p.text-muted © 2013 MerchApp. All rights reserved. Developed by&nbsp;
-          a(href='https://github.com/Grievoushead', target='_blank') Grievoushead.
+
 
     // Scripts go here
     script(src='/static/js/vendor/modernizr.min.js')
