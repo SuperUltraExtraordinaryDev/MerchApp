@@ -6,7 +6,7 @@ angular.module('MerchApp', ['ngResource', 'ngCookies']).
         $routeProvider.when('/', {templateUrl: '/products/categories', controller: 'CategoriesCtrl'});
         $routeProvider.when('/category/:id', {templateUrl: '/products/products', controller: 'ProductsCtrl'});
         $routeProvider.when('/errors/404', {templateUrl: '/errors/404'});
-        $routeProvider.when('/admin', {templateUrl: '/admin/login', controller: 'LoginCtrl'});
+        $routeProvider.when('/admin', {templateUrl: '/admin/admin', controller: 'LoginCtrl'});
         $routeProvider.otherwise({redirectTo: '/errors/404'});
         $locationProvider.html5Mode(false);
     }]);
