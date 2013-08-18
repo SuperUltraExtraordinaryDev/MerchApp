@@ -1,7 +1,7 @@
 'use strict';
 
 (function() {
-    var loginCtrl = function(scope, authSvc){
+    var loginCtrl = function(scope, authSvc) {
 
       scope.Model = {
           Login: '',
