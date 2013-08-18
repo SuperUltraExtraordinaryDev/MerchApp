@@ -8,9 +8,7 @@
         };
 
         (function() {
-            authSvc.IsUserLoggedIn(function() {
-                navigateToDefaultPage();
-            });
+
         })();
 
       scope.Model = {

@@ -1,7 +1,7 @@
 'use strict';
 
 (function() {
-    var authSvc = function(http, cookies, location){
+    var authSvc = function(http, cookies){
        var self = this,
            observers = [];
 
@@ -11,17 +11,18 @@
             });
        };
 
+       self.IsAuthenticated = false;
+
        self.LoginStatusChanged = function(callback) {
          observers.push(callback);
        };
 
        self.IsUserLoggedIn = function(cb) {
          http.get('/api/backend/IsUserLoggedIn').success(function(res) {
-
-           if (cookies.user && res.success) {
-             cb(res.username);
-           } else {
-             location.path('/');
+           self.IsAuthenticated = cookies.user && res.success;
+           if (self.IsAuthenticated) {
+               cb(true);
+               notifyObservers(res.username);
            }
          });
        };
@@ -33,6 +34,7 @@
                 data: { login: login, password: password }
             }).success(function(res) {
                  if (res.success) {
+                   self.IsAuthenticated = true;
                    notifyObservers(login);
                  }
                });
@@ -43,12 +45,13 @@
                 method: 'GET',
                 url: "/api/backend/logout"
             }).success(function() {
+                    self.IsAuthenticated = false;
                     notifyObservers();
                 });
         };
     };
 
-    authSvc.$inject = ['$http', '$cookies', '$location'];
+    authSvc.$inject = ['$http', '$cookies'];
     angular.module('MerchApp.Common').service('AuthSvc', authSvc);
 
 })();

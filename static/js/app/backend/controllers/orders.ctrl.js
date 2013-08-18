@@ -3,7 +3,6 @@
 (function() {
     var ordersCtrl = function(scope, location, authSvc) {
 
-
     };
 
     ordersCtrl.$inject = ['$scope', '$location', 'AuthSvc'];

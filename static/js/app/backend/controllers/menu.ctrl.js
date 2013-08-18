@@ -10,10 +10,6 @@
         };
 
         (function() {
-            authSvc.IsUserLoggedIn(function(username) {
-                setCurrentUserName(username);
-            });
-
             authSvc.LoginStatusChanged(function (username) {
                 setCurrentUserName(username);
             });
