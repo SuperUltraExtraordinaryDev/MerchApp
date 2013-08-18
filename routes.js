@@ -12,8 +12,8 @@ module.exports = function (app) {
   // BackEnd
   app.get('/admin', views.admin);
   app.post('/api/backend/login', auth.login);
-  app.get('/api/backend/logout', auth.logout);
-  app.get('/api/backend/IsUserLoggedIn', auth.isUserLoggedIn);
+  app.post('/api/backend/logout', auth.logout);
+  app.post('/api/backend/IsUserLoggedIn', auth.isUserLoggedIn);
 //  app.get('/posts/', posts.list);
 //  app.get('/posts/create/', posts.create_form);
 //  app.post('/posts/create/', posts.create);

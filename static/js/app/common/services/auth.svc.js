@@ -18,7 +18,11 @@
        };
 
        self.IsUserLoggedIn = function(cb) {
-         http.get('/api/backend/IsUserLoggedIn').success(function(res) {
+         http({
+             url: '/api/backend/IsUserLoggedIn',
+             method: 'POST',
+             cache: false
+         }).success(function(res) {
            self.IsAuthenticated = cookies.user && res.success;
            cb(self.IsAuthenticated);
            notifyObservers(res.username);
@@ -41,7 +45,7 @@
 
        self.Logout= function(){
             return http({
-                method: 'GET',
+                method: 'POST',
                 url: "/api/backend/logout"
             }).success(function() {
                     self.IsAuthenticated = false;
