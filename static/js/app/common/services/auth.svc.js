@@ -1,26 +1,26 @@
 'use strict';
 
 (function() {
-    var authSvc = function($http, $cookies){
+    var authSvc = function(http, cookies){
        var self = this;
 
        self.Login= function(login, password){
-           return $http({
+           return http({
                 method: 'POST',
-                url: "/api/admin/login",
+                url: "/api/backend/login",
                 data: { login: login, password: password }
             });
        };
 
         self.Logout= function(){
-            return $http({
+            return http({
                 method: 'GET',
-                url: "/api/admin/logout"
+                url: "/api/backend/logout"
             });
         };
     };
 
     authSvc.$inject = ['$http', '$cookies'];
-    angular.module('MerchApp').service('AuthSvc', authSvc);
+    angular.module('MerchApp.Common').service('AuthSvc', authSvc);
 
 })();

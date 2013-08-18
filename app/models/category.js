@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var categorySchema = new Schema({
     title : String,
     description : String,
-    //products : [require('./product')],
+    //frontend : [require('./product')],
     img_url : String
 });
 

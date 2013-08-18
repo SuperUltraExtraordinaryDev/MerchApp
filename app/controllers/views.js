@@ -1,5 +1,9 @@
 module.exports.index = function (req, res) {
-  return res.render('index');
+  return res.render('frontend/index');
+};
+
+module.exports.admin = function (req, res) {
+    return res.render('backend/index');
 };
 
 module.exports.partial = function (req, res) {

@@ -25841,9 +25841,9 @@ angular.scenario.dsl('input', function() {
 
 /**
  * Usage:
- *    repeater('#products table', 'Product List').count() number of rows
- *    repeater('#products table', 'Product List').row(1) all bindings in row as an array
- *    repeater('#products table', 'Product List').column('product.name') all values across all rows in an array
+ *    repeater('#frontend table', 'Product List').count() number of rows
+ *    repeater('#frontend table', 'Product List').row(1) all bindings in row as an array
+ *    repeater('#frontend table', 'Product List').column('product.name') all values across all rows in an array
  */
 angular.scenario.dsl('repeater', function() {
   var chain = {};

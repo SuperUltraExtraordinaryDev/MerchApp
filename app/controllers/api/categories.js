@@ -44,7 +44,7 @@ module.exports.getById = function (req, res) {
 //        catRepo.Save({
 //            title : 'String',
 //            decription : 'String',
-//            products : prods,
+//            frontend : prods,
 //            img_url : 'String'
 //        }, function (err) {
 //            console.log(err);

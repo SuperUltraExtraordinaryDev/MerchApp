@@ -3,13 +3,16 @@ var views = require('./app/controllers/views'),
     auth = require('./app/controllers/api/auth');
 
 module.exports = function (app) {
+  // FrontEnd
   app.get('/', views.index);
   app.get('/api/categories', categories.getAll);
   app.get('/api/categories/:id', categories.getById);
-  app.post('/api/admin/login', auth.login);
-  app.get('/api/admin/logout', auth.logout);
+  app.post('/api/backend/login', auth.login);
+  app.get('/api/backend/logout', auth.logout);
   app.get('/:folder/:view', views.partial);
 
+  // BackEnd
+  app.get('/admin', views.admin);
 //  app.get('/posts/', posts.list);
 //  app.get('/posts/create/', posts.create_form);
 //  app.post('/posts/create/', posts.create);

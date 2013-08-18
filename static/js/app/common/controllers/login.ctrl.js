@@ -1,7 +1,7 @@
 'use strict';
 
 (function() {
-    var categoriesCtrl = function(scope, authSvc){
+    var loginCtrl = function(scope, authSvc){
 
       scope.Model = {
           Login: '',
@@ -24,7 +24,7 @@
       };
     };
 
-    categoriesCtrl.$inject = ['$scope', 'AuthSvc'];
-    angular.module('MerchApp').controller('LoginCtrl', categoriesCtrl);
+    loginCtrl.$inject = ['$scope', 'AuthSvc'];
+    angular.module('MerchApp.Common').controller('LoginCtrl', loginCtrl);
 
 })();
