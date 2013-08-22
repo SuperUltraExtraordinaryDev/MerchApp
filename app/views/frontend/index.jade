@@ -20,13 +20,14 @@ html.no-js
     link(rel='stylesheet', href='/static/css/bootstrap.min.css')
     link(rel='stylesheet', href='/static/css/black-transparent-theme.css')
     link(rel='stylesheet', href='/static/css/main.css')
+    link(href='http://fonts.googleapis.com/css?family=Montez', rel='stylesheet', type='text/css')
 
   body(ng-app='MerchApp')
     .container.rightShadow
         .container.thumbnail.leftShadow
 
           .masthead
-            h3.text-muted MerchApp
+            h3.text-muted.title Merch
             .top-menu.row.thumbnail
               .col-lg-6.col-lg-offset-3
                 ul.nav.nav-pills.nav-justified
@@ -50,9 +51,17 @@ html.no-js
     script(src='/static/js/vendor/modernizr.min.js')
     script(src='/static/js/vendor/jquery.min.js')
     script(src='/static/js/vendor/bootstrap.min.js')
+    script(src='/static/js/vendor/jquery.nicescroll.min.js')
+    script
+        $(document).ready(
+            function() {
+                $("html").niceScroll();
+            }
+        );
     script(src='/static/js/vendor/angular/angular.min.js')
     script(src='/static/js/vendor/angular/angular-resource.min.js')
     script(src='/static/js/vendor/angular/angular-cookies.min.js')
+
 
     // App go here
     // Common
