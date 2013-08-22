@@ -16,7 +16,7 @@ module.exports.init = function(){
        var c = {
            title : 'Cat' + i,
            description : 'Desc' + i,
-           img_url : 'ImgUrl' + i
+           img_url : 'http://cs317519.vk.me/v317519707/8edd/WJHxLC6k4tk.jpg'
        };
        catRepo.Save(c, function(err){
            if (err) {
@@ -31,7 +31,7 @@ module.exports.init = function(){
             title : 'Prod' + i,
             description : 'Desc' + i,
             price : 100 + i,
-            img_url : 'ImgUrl' + i,
+            img_url : 'http://cs317519.vk.me/v317519707/8edd/WJHxLC6k4tk.jpg',
             cat_id : i
         };
         prodRepo.Save(p, function(err){

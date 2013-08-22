@@ -28,7 +28,7 @@ html.no-js
 
           .masthead
             h3.text-muted.title Merch
-            .top-menu.row.thumbnail
+            .top-menu.row
               .col-lg-6.col-lg-offset-3
                 ul.nav.nav-pills.nav-justified
                   li
@@ -39,7 +39,8 @@ html.no-js
                     a(href='#/') Checkout
 
           .body-content
-            div.ng-view
+            .body-wrapper.panel
+              div.ng-view
 
           .footer
             hr
@@ -55,9 +56,10 @@ html.no-js
     script
         $(document).ready(
             function() {
-                $("html").niceScroll();
+                $("html").niceScroll({cursorcolor:"#000000"});
             }
         );
+
     script(src='/static/js/vendor/angular/angular.min.js')
     script(src='/static/js/vendor/angular/angular-resource.min.js')
     script(src='/static/js/vendor/angular/angular-cookies.min.js')
