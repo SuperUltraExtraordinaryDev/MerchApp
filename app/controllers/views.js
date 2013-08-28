@@ -12,3 +12,9 @@ module.exports.partial = function (req, res) {
 
   return res.render(folder + '/' + view);
 };
+
+module.exports.templates = function (req, res) {
+
+
+    return res.render('templates/' + req.params.name);
+};

@@ -3,8 +3,8 @@
 // Declare app level module which depends on filters, and services
 angular.module('MA.Admin', ['MA.Common'])
     .config(['$routeProvider', function(routeProvider) {
-        routeProvider.when('/', {templateUrl: '/backend/login', controller: 'LoginCtrl'});
-        routeProvider.when('/orders', {templateUrl: '/backend/orders', controller: 'OrdersCtrl'});
+        routeProvider.when('/', {templateUrl: '/partial/backend/login', controller: 'LoginCtrl'});
+        routeProvider.when('/orders', {templateUrl: '/partial/backend/orders', controller: 'OrdersCtrl'});
     }])
     .run(['$rootScope', '$location', '$window', 'AuthSvc', function(rootScope, location, $window, authSvc) {
       rootScope.$on('$locationChangeStart', function(event, next, current) {
@@ -30,6 +30,10 @@ angular.module('MA.Admin', ['MA.Common'])
                       location.path($window.location.hash.replace('#', ''));
                   }
               });
+          } else {
+              if (location.path() == '/') {
+                  location.path('/orders');
+              }
           }
 
       });

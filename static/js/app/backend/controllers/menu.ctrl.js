@@ -7,14 +7,14 @@
 
         (function() {
             authSvc.OnLoginStatusChanged(function (username) {
-                debugger
                 scope.CurrentUserName = username;
             });
         })();
 
         scope.Logout = function () {
-            authSvc.Logout();
-            $location.path('/');
+            authSvc.Logout().success(function(){
+              $location.path('/');
+            });
         };
     };
 

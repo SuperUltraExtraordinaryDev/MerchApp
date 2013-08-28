@@ -7,7 +7,8 @@ module.exports = function (app) {
   app.get('/', views.index);
   app.get('/api/categories', categories.getAll);
   app.get('/api/categories/:id', categories.getById);
-  app.get('/:folder/:view', views.partial);
+  app.get('/partial/:folder/:view', views.partial);
+  app.get('/templates/:name', views.templates);
 
   // BackEnd
   app.get('/admin', views.admin);

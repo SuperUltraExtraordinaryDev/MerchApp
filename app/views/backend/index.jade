@@ -23,10 +23,13 @@ html.no-js
     link(rel='stylesheet', href='/static/css/admin-main.css')
 
   body(ng-app='MA.Admin')
-    ng-include(src="'backend/menu'")
+    ng-include(src="'partial/backend/top-menu'")
 
+    .row
+      ng-include(src="'partial/backend/left-menu'")
 
-    .container.ng-view
+      .col-lg-9
+        .container.ng-view
 
 
     // Scripts go here
