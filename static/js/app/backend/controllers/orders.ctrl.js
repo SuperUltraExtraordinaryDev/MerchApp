@@ -6,6 +6,6 @@
     };
 
     ordersCtrl.$inject = ['$scope', '$location', 'AuthSvc'];
-    angular.module('MerchApp.Admin').controller('OrdersCtrl', ordersCtrl);
+    angular.module('MA.Admin').controller('OrdersCtrl', ordersCtrl);
 
 })();

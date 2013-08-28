@@ -9,6 +9,6 @@
     };
 
     productsCtrl.$inject = ['$scope', 'ProductsSvc', "$routeParams"];
-    angular.module('MerchApp').controller('ProductsCtrl', productsCtrl);
+    angular.module('MA').controller('ProductsCtrl', productsCtrl);
 
 })();

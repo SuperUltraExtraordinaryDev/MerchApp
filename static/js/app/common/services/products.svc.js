@@ -16,6 +16,6 @@
     };
 
     productsSvc.$inject = ['$resource'];
-    angular.module('MerchApp.Common').factory('ProductsSvc', productsSvc);
+    angular.module('MA.Common').factory('ProductsSvc', productsSvc);
 
 })();

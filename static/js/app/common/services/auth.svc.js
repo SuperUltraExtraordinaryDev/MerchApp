@@ -13,7 +13,7 @@
 
        self.IsAuthenticated = false;
 
-       self.LoginStatusChanged = function(callback) {
+       self.OnLoginStatusChanged = function(callback) {
          observers.push(callback);
        };
 
@@ -23,7 +23,7 @@
              method: 'POST',
              cache: false
          }).success(function(res) {
-           self.IsAuthenticated = cookies.user && res.success;
+           self.IsAuthenticated = cookies.user || res.success;
            cb(self.IsAuthenticated);
            notifyObservers(res.username);
 
@@ -55,6 +55,6 @@
     };
 
     authSvc.$inject = ['$http', '$cookies'];
-    angular.module('MerchApp.Common').service('AuthSvc', authSvc);
+    angular.module('MA.Common').service('AuthSvc', authSvc);
 
 })();

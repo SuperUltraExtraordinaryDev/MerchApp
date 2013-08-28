@@ -8,6 +8,6 @@
     };
 
     categoriesCtrl.$inject = ['$scope', 'ProductsSvc'];
-    angular.module('MerchApp').controller('CategoriesCtrl', categoriesCtrl);
+    angular.module('MA').controller('CategoriesCtrl', categoriesCtrl);
 
 })();

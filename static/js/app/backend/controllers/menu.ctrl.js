@@ -1,26 +1,24 @@
 'use strict';
 
 (function() {
-    var menuCtrl = function(scope, authSvc) {
+    var menuCtrl = function(scope, authSvc, $location) {
 
         scope.CurrentUserName = null;
 
-        var setCurrentUserName = function(name) {
-          scope.CurrentUserName = name;
-        };
-
         (function() {
-            authSvc.LoginStatusChanged(function (username) {
-                setCurrentUserName(username);
+            authSvc.OnLoginStatusChanged(function (username) {
+                debugger
+                scope.CurrentUserName = username;
             });
         })();
 
-        scope.SignOut = function() {
-          authSvc.Logout();
+        scope.Logout = function () {
+            authSvc.Logout();
+            $location.path('/');
         };
     };
 
-    menuCtrl.$inject = ['$scope', 'AuthSvc'];
-    angular.module('MerchApp.Admin').controller('MenuCtrl', menuCtrl);
+    menuCtrl.$inject = ['$scope', 'AuthSvc', '$location'];
+    angular.module('MA.Admin').controller('MenuCtrl', menuCtrl);
 
 })();

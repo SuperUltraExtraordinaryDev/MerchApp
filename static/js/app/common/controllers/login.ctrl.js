@@ -27,6 +27,6 @@
     };
 
     loginCtrl.$inject = ['$scope', '$location', 'AuthSvc'];
-    angular.module('MerchApp.Common').controller('LoginCtrl', loginCtrl);
+    angular.module('MA.Common').controller('LoginCtrl', loginCtrl);
 
 })();

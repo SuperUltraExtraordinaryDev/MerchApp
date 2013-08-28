@@ -21,6 +21,6 @@
     };
 
     categoryItem.$inject = ['$templateCache'];
-    angular.module('MerchApp').directive('categoryItem', categoryItem);
+    angular.module('MA').directive('categoryItem', categoryItem);
 
 })();
