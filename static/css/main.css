@@ -1,6 +1,8 @@
 body {
   padding-top: 60px;
   padding-bottom: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
   background-image: url("/static/img/irongrip.png");
 }
 .container {
@@ -47,4 +49,13 @@ body {
 .body-wrapper {
   margin-left: 40px;
   margin-right: 40px;
+}
+.nav-pills li {
+  min-width: 150px;
+  text-align: center;
+}
+@media screen and (max-width: 595px) {
+  .nav-responsive li {
+    float: none;
+  }
 }

@@ -2636,7 +2636,7 @@ button.close {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.19);
 }
 .nav > li.disabled > a {
   color: #999999;
@@ -2726,8 +2726,8 @@ button.close {
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
-  color: #ffffff;
-  background-color: #1abc9c;
+  color: #000000;
+  background-color: rgba(177, 177, 177, 0.92);
 }
 .nav-stacked > li {
   float: none;
