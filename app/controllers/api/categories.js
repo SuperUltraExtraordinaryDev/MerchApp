@@ -1,9 +1,10 @@
-var repo = require('../../repositories/repository'),
+var repo = require('../../../repository'),
     errors = require('../errors');
 
 var catRepo = new repo.Repository('Category');
 
 module.exports.getAll = function (req, res) {
+   throw new Error('dfd');
   catRepo.FindAll({}, function (err, categories) {
     if (err) {
       errors.handler500(req, res);

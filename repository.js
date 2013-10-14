@@ -1,12 +1,18 @@
 var mongoose = require('mongoose');
 
-var repository = function (modelName) {
+var repository = function (model) {
 
   var self = this;
 
-  self.Model = require('../models/' + modelName);
+  // model is a name of the model or mongoose model obj.
+  if (typeof model === 'function') {
+    self.Model = model;
+  } else {
+    self.Model = require('./app/models/' + model);
+  }
 
   self.FindById = function (id, cb) {
+    if (!cb) throw new Error('Callback is not defined!');
     self.FindOne({
       _id : id
     }, function(err, entity) {
@@ -15,6 +21,7 @@ var repository = function (modelName) {
   };
 
   self.FindOne = function (params, cb) {
+    if (!cb) throw new Error('Callback is not defined!');
     self.Model.findOne(params, function (err, entity) {
       if (!err && !entity) {
         err = true;
@@ -25,6 +32,7 @@ var repository = function (modelName) {
   };
 
   self.FindAll = function (params, cb, lean) {
+    if (!cb) throw new Error('Callback is not defined!');
     if (!lean) {
         self.Model.find(params).exec(cb);
     } else {
@@ -33,6 +41,7 @@ var repository = function (modelName) {
   };
 
   self.Save = function (obj, cb) {
+    if (!cb) throw new Error('Callback is not defined!');
     var entity = new self.Model(obj);
     entity.save(function (err) {
       cb(err);
@@ -40,6 +49,7 @@ var repository = function (modelName) {
   };
 
   self.Update = function (entity, cb) {
+    if (!cb) throw new Error('Callback is not defined!');
     self.FindById(entity.id, function (err, oldEntity) {
       if (err) {
         cb(err);

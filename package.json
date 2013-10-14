@@ -10,7 +10,8 @@
     "mongoose": "~3.6.15",
     "express": "~3.3.4",
     "jade": "~0.34.1",
-    "stylus": "~0.34.1"
+    "stylus": "~0.34.1",
+    "moment": "~2.2.1"
   },
   "engines": {
     "node": "v0.10.15"

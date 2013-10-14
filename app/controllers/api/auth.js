@@ -1,4 +1,4 @@
-var repo = require('../../repositories/repository'),
+var repo = require('../../../repository'),
     errors = require('../errors');
 
 //var catRepo = new repo.Repository('Category');
