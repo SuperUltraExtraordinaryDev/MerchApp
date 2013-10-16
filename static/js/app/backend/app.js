@@ -5,10 +5,12 @@ angular.module('MA.Admin', ['MA.Common'])
     .config(['$routeProvider', function(routeProvider) {
         routeProvider.when('/', {templateUrl: '/partial/backend/login', controller: 'LoginCtrl'});
         routeProvider.when('/orders', {templateUrl: '/partial/backend/orders', controller: 'OrdersCtrl'});
+        routeProvider.when('/categories', {templateUrl: '/partial/backend/orders', controller: 'OrdersCtrl'});
     }])
     .run(['$rootScope', '$location', '$window', 'AuthSvc', function(rootScope, location, $window, authSvc) {
       rootScope.$on('$locationChangeStart', function(event, next, current) {
 
+          // Todo: Set security!
           if (!authSvc.IsAuthenticated) {
 
               if (location.path() != '/') {

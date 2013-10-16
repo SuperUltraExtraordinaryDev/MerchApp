@@ -1,4 +1,4 @@
-var config = require('./config'),
+/*var config = require('./config'),
     repo = require('./repository'),
     mongoose = require('mongoose'),
     moment = require('moment');
@@ -53,4 +53,54 @@ module.exports.errorLog = function(err, req, res) {
     logRepo.Save(extractLogEntry(req, res), function(){});
     // respond with 500 "Internal Server Error".
     res.send(500);
-}
+}*/
+'use strict'
+
+var winston = require('winston'),
+    email = require('emailjs'),
+    config = require('./config');
+
+//
+// Requiring `winston-mongodb` will expose
+// `winston.transports.MongoDB`
+//
+var mongodb = require('winston-mongodb').MongoDB;
+
+var logger = new (winston.Logger)({
+  exitOnError: false,
+  transports: [
+    new (winston.transports.Console)({
+      handleExceptions: true,
+      colorize: true,
+      timestamp: true
+    }),
+    new (winston.transports.File)({
+      filename: 'all-logs.log',
+      handleExceptions: true,
+      colorize: true,
+      timestamp: true,
+      maxsize: 1048576 // 1Mb
+    }),
+    new (mongodb)({
+      db: 'merchdb',
+      //collection: 'logs',
+      //host: 'localhost',
+      //port: '27017',
+      level: 'error',
+        handleExceptions: true
+    })
+    /*new (winston.transports.File)({
+      filename: 'error.log',
+      handleExceptions: true,
+      timestamp: true,
+      level: 'error',
+      maxsize: 1048576 // 1Mb
+    }), */
+
+  ]
+});
+
+logger.cli();
+
+module.exports = logger;
+

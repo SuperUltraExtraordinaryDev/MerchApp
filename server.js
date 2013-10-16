@@ -30,7 +30,7 @@ app.use('/static', require('stylus').middleware(path.join(__dirname + '/static')
 app.use('/static', express['static'](path.join(__dirname, '/static')));
 // logger defined after static files to skip it.
 app.use(express.logger({ immediate: false, format: config.LOGGER_FORMAT }));
-app.use(logger.accessLog);
+app.use(logger);
 
 app.use(express.bodyParser());
 app.use(express.methodOverride());
@@ -53,7 +53,7 @@ if ('development' === app.get('env')) {
 
 app.use(app.router);
 
-app.use(logger.errorLog);
+app.use(logger);
 
 // initialize routes
 require('./routes')(app);
