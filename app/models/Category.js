@@ -9,7 +9,6 @@ var categorySchema = new Schema({
     img_url : String
 }, {
     '_id': false,
-    'id': false,
     autoIndex: false
 });
 
@@ -17,7 +16,7 @@ categorySchema.index({title: 1}, {unique: true});
 
 var Category = mongoose.model('Category', categorySchema);
 
-var a = mongoose.connection.db.collectionNames(function (err, names) {
+mongoose.connection.db.collectionNames(function (err, names) {
   if(err) {
     return logger.error(err);
   }
