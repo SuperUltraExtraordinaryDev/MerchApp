@@ -1,13 +1,13 @@
 var repo = require('../../../repository'),
     errors = require('../errors'),
-    logger = require('../../../logger').logger;
+    logger = require('custom/logger').logger;
 
 var catRepo = new repo.Repository('Category');
 
 module.exports.getAll = function (req, res) {
-    var er = new Error('Hello world');
-  logger.error('One error', er);
-  throw new Error('dfd');
+  //var er = new Error('Hello world');
+  //logger.error('One error', er);
+  //throw new Error('dfd');
   catRepo.FindAll({}, function (err, categories) {
     if (err) {
       errors.handler500(req, res);
