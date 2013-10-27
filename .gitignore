@@ -1,0 +1,7 @@
+src/node_modules/*
+src/logs/*
+.idea
+
+# except
+!src/node_modules/custom
+
