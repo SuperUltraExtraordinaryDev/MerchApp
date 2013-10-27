@@ -1,60 +1,407 @@
 !!! 5
-//if lt IE 7
-  html.no-js.lt-ie9.lt-ie8.lt-ie7
-//if IE 7
-  html.no-js.lt-ie9.lt-ie8
-//if IE 8
-  html.no-js.lt-ie9
-// [if gt IE 8] <!
-html.no-js
-  // <![endif]
-  head
+html(lang='en')
+head
     meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-    meta(name='viewport', content='width=device-width')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Dashboard - SB Admin
 
-    title Merch Admin
-    meta(name='description', content='description')
-    meta(name='keywords', content='keywords')
+    link(href='/static/sb-admin/css/bootstrap.css', rel='stylesheet')
 
-    link(rel='stylesheet', href='/static/css/bootstrap.min.css')
-    link(rel='stylesheet', href='/static/css/kendo/kendo.common.min.css')
-    link(rel='stylesheet', href='/static/css/kendo/kendo.silver.min.css')
-    link(rel='stylesheet', href='/static/css/admin-main.css')
+    link(href='/static/sb-admin/css/sb-admin.css', rel='stylesheet')
+    link(rel='stylesheet', href='/static/sb-admin/font-awesome/css/font-awesome.min.css')
 
-  body(ng-app='MA.Admin')
-    ng-include(src="'partial/backend/top-menu'")
+    link(rel='stylesheet', href='http://cdn.oesmith.co.uk/morris-0.4.3.min.css')
+    body
+        #wrapper
 
-    .row
-      //ng-include(src="'partial/backend/left-menu'")
+            nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
 
-      .col-lg-12
-        .container.ng-view
+                //Brand and toggle get grouped for better mobile display
+                .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-ex1-collapse')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='index.html') SB Admin
 
+                //Collect the nav links, forms, and other content for toggling
+                .collapse.navbar-collapse.navbar-ex1-collapse
+                    ul.nav.navbar-nav.side-nav
+                        li.active
+                            a(href='index.html')
+                                i.icon-dashboard
+                                | Dashboard
+                        li
+                            a(href='charts.html')
+                                i.icon-bar-chart
+                                | Charts
+                        li
+                            a(href='tables.html')
+                                i.icon-table
+                                | Tables
+                        li
+                            a(href='forms.html')
+                                i.icon-edit
+                                | Forms
+                        li
+                            a(href='typography.html')
+                                i.icon-font
+                                | Typography
+                        li
+                            a(href='bootstrap-elements.html')
+                                i.icon-desktop
+                                | Bootstrap Elements
+                        li
+                            a(href='bootstrap-grid.html')
+                                i.icon-wrench
+                                | Bootstrap Grid
+                        li
+                            a(href='blank-page.html')
+                                i.icon-file-alt
+                                | Blank Page
+                        li.dropdown
+                            a.dropdown-toggle(href='#', data-toggle='dropdown')
+                                i.icon-collapse
+                                | Dropdown
+                                b.caret
+                            ul.dropdown-menu
+                                li
+                                    a(href='#') Dropdown Item
+                                li
+                                    a(href='#') Another Item
+                                li
+                                    a(href='#') Third Item
+                                li
+                                    a(href='#') Last Item
+                    ul.nav.navbar-nav.navbar-right.navbar-user
+                        li.dropdown.messages-dropdown
+                            a.dropdown-toggle(href='#', data-toggle='dropdown')
+                                i.icon-envelope
+                                |&nbsp;Messages &nbsp;
+                                span.badge 7
+                                b.caret
+                            ul.dropdown-menu
+                                li.dropdown-header 7 New Messages
+                                li.message-preview
+                                    a(href='#')
+                                        span.avatar
+                                            img(src='http://placehold.it/50x50')
+                                        span.name John Smith:
+                                        span.message Hey there, I wanted to ask you something...
+                                        span.time
+                                            i.icon-time
+                                            | 4:34 PM
+                                li.divider
+                                li.message-preview
+                                    a(href='#')
+                                        span.avatar
+                                            img(src='http://placehold.it/50x50')
+                                        span.name John Smith:
+                                        span.message Hey there, I wanted to ask you something...
+                                        span.time
+                                            i.icon-time
+                                            | 4:34 PM
+                                li.divider
+                                li.message-preview
+                                    a(href='#')
+                                        span.avatar
+                                            img(src='http://placehold.it/50x50')
+                                        span.name John Smith:
+                                        span.message Hey there, I wanted to ask you something...
+                                        span.time
+                                            i.icon-time
+                                            | 4:34 PM
+                                li.divider
+                                li
+                                    a(href='#')
+                                        | View Inbox
+                                        span.badge 7
+                        li.dropdown.alerts-dropdown
+                            a.dropdown-toggle(href='#', data-toggle='dropdown')
+                                i.icon-bell-alt
+                                | Alerts
+                                span.badge 3
+                                b.caret
+                            ul.dropdown-menu
+                                li
+                                    a(href='#')
+                                        | Default
+                                        span.label.label-default Default
+                                li
+                                    a(href='#')
+                                        | Primary
+                                        span.label.label-primary Primary
+                                li
+                                    a(href='#')
+                                        | Success
+                                        span.label.label-success Success
+                                li
+                                    a(href='#')
+                                        | Info
+                                        span.label.label-info Info
+                                li
+                                    a(href='#')
+                                        | Warning
+                                        span.label.label-warning Warning
+                                li
+                                    a(href='#')
+                                        | Danger
+                                        span.label.label-danger Danger
+                                li.divider
+                                li
+                                    a(href='#') View All
+                        li.dropdown.user-dropdown
+                            a.dropdown-toggle(href='#', data-toggle='dropdown')
+                                i.icon-user
+                                | John Smith
+                                b.caret
+                            ul.dropdown-menu
+                                li
+                                    a(href='#')
+                                        i.icon-user
+                                        | Profile
+                                li
+                                    a(href='#')
+                                        i.icon-envelope
+                                        | Inbox
+                                        span.badge 7
+                                li
+                                    a(href='#')
+                                        i.icon-gear
+                                        | Settings
+                                li.divider
+                                li
+                                    a(href='#')
+                                        i.icon-power-off
+                                        | Log Out
 
-    // Scripts go here
-    script(src='/static/js/vendor/modernizr.min.js')
-    script(src='/static/js/vendor/jquery.min.js')
-    script(src='/static/js/vendor/bootstrap.min.js')
-    script(src='/static/js/vendor/angular/angular.min.js')
-    script(src='/static/js/vendor/angular/angular-resource.min.js')
-    script(src='/static/js/vendor/angular/angular-cookies.min.js')
+            #page-wrapper
+                .row
+                    .col-lg-12
+                        h1
+                            | Dashboard
+                            small Statistics Overview
+                        ol.breadcrumb
+                            li.active
+                                i.icon-dashboard
+                                | Dashboard
+                        .alert.alert-success.alert-dismissable
+                            button.close(type='button', data-dismiss='alert', aria-hidden='true') ×
+                            | Welcome to SB Admin by
+                            a.alert-link(href='http://startbootstrap.com') Start Bootstrap
+                            | ! Feel free to use this template for your admin needs! We are using a few different plugins to handle the dynamic tables and charts, so make sure you check out the necessary documentation links provided.
 
-    // App go here
-    // Common
-    script(src='/static/js/app/common/app.js')
-    // Svc
-    script(src='/static/js/app/common/services/products.svc.js')
-    script(src='/static/js/app/common/services/auth.svc.js')
-    // Dir
-    // Ctrl
-    script(src='/static/js/app/common/controllers/login.ctrl.js')
+                .row
+                    .col-lg-3
+                        .panel.panel-info
+                            .panel-heading
+                                .row
+                                    .col-xs-6
+                                        i.icon-comments.icon-5x
+                                    .col-xs-6.text-right
+                                        p.announcement-heading 456
+                                        p.announcement-text New Mentions!
+                            a(href='#')
+                                .panel-footer.announcement-bottom
+                                    .row
+                                        .col-xs-6
+                                            | View Mentions
+                                        .col-xs-6.text-right
+                                            i.icon-circle-arrow-right
+                    .col-lg-3
+                        .panel.panel-warning
+                            .panel-heading
+                                .row
+                                    .col-xs-6
+                                        i.icon-check.icon-5x
+                                    .col-xs-6.text-right
+                                        p.announcement-heading 12
+                                        p.announcement-text To-Do Items
+                            a(href='#')
+                                .panel-footer.announcement-bottom
+                                    .row
+                                        .col-xs-6
+                                            | Complete Tasks
+                                        .col-xs-6.text-right
+                                            i.icon-circle-arrow-right
+                    .col-lg-3
+                        .panel.panel-danger
+                            .panel-heading
+                                .row
+                                    .col-xs-6
+                                        i.icon-tasks.icon-5x
+                                    .col-xs-6.text-right
+                                        p.announcement-heading 18
+                                        p.announcement-text Crawl Errors
+                            a(href='#')
+                                .panel-footer.announcement-bottom
+                                    .row
+                                        .col-xs-6
+                                            | Fix Issues
+                                        .col-xs-6.text-right
+                                            i.icon-circle-arrow-right
+                    .col-lg-3
+                        .panel.panel-success
+                            .panel-heading
+                                .row
+                                    .col-xs-6
+                                        i.icon-comments.icon-5x
+                                    .col-xs-6.text-right
+                                        p.announcement-heading 56
+                                        p.announcement-text New Orders!
+                            a(href='#')
+                                .panel-footer.announcement-bottom
+                                    .row
+                                        .col-xs-6
+                                            | Complete Orders
+                                        .col-xs-6.text-right
+                                            i.icon-circle-arrow-right
 
-    // Backend
-    script(src='/static/js/app/backend/app.js')
-    // Dir
-    // Ctrl
-    script(src='/static/js/app/backend/controllers/menu.ctrl.js')
-    script(src='/static/js/app/backend/controllers/orders.ctrl.js')
+                .row
+                    .col-lg-12
+                        .panel.panel-primary
+                            .panel-heading
+                                h3.panel-title
+                                    i.icon-bar-chart
+                                    | Traffic Statistics: October 1, 2013 - October 31, 2013
+                            .panel-body
+                                #morris-chart-area
 
+                .row
+                    .col-lg-4
+                        .panel.panel-primary
+                            .panel-heading
+                                h3.panel-title
+                                    i.icon-long-arrow-right
+                                    | Traffic Sources: October 1, 2013 - October 31, 2013
+                            .panel-body
+                                #morris-chart-donut
+                                .text-right
+                                    a(href='#')
+                                        | View Details
+                                        i.icon-circle-arrow-right
+                    .col-lg-4
+                        .panel.panel-primary
+                            .panel-heading
+                                h3.panel-title
+                                    i.icon-time
+                                    | Recent Activity
+                            .panel-body
+                                .list-group
+                                    a.list-group-item(href='#')
+                                        span.badge just now
+                                        i.icon-calendar
+                                        | Calendar updated
+                                    a.list-group-item(href='#')
+                                        span.badge 4 minutes ago
+                                        i.icon-comment-alt
+                                        | Commented on a post
+                                    a.list-group-item(href='#')
+                                        span.badge 23 minutes ago
+                                        i.icon-truck
+                                        | Order 392 shipped
+                                    a.list-group-item(href='#')
+                                        span.badge 46 minutes ago
+                                        i.icon-money
+                                        | Invoice 653 has been paid
+                                    a.list-group-item(href='#')
+                                        span.badge 1 hour ago
+                                        i.icon-user
+                                        | A new user has been added
+                                    a.list-group-item(href='#')
+                                        span.badge 2 hours ago
+                                        i.icon-check
+                                        | Completed task: "pick up dry cleaning"
+                                    a.list-group-item(href='#')
+                                        span.badge yesterday
+                                        i.icon-globe
+                                        | Saved the world
+                                    a.list-group-item(href='#')
+                                        span.badge two days ago
+                                        i.icon-check
+                                        | Completed task: "fix error on sales page"
+                                .text-right
+                                    a(href='#')
+                                        | View All Activity
+                                        i.icon-circle-arrow-right
+                    .col-lg-4
+                        .panel.panel-primary
+                            .panel-heading
+                                h3.panel-title
+                                    i.icon-money
+                                    | Recent Transactions
+                            .panel-body
+                                .table-responsive
+                                    table.table.table-bordered.table-hover.table-striped.tablesorter
+                                        thead
+                                            tr
+                                                th
+                                                    | Order #
+                                                    i.icon-sort
+                                                th
+                                                    | Order Date
+                                                    i.icon-sort
+                                                th
+                                                    | Order Time
+                                                    i.icon-sort
+                                                th
+                                                    | Amount (USD)
+                                                    i.icon-sort
+                                        tbody
+                                            tr
+                                                td 3326
+                                                td 10/21/2013
+                                                td 3:29 PM
+                                                td $321.33
+                                            tr
+                                                td 3325
+                                                td 10/21/2013
+                                                td 3:20 PM
+                                                td $234.34
+                                            tr
+                                                td 3324
+                                                td 10/21/2013
+                                                td 3:03 PM
+                                                td $724.17
+                                            tr
+                                                td 3323
+                                                td 10/21/2013
+                                                td 3:00 PM
+                                                td $23.71
+                                            tr
+                                                td 3322
+                                                td 10/21/2013
+                                                td 2:49 PM
+                                                td $8345.23
+                                            tr
+                                                td 3321
+                                                td 10/21/2013
+                                                td 2:23 PM
+                                                td $245.12
+                                            tr
+                                                td 3320
+                                                td 10/21/2013
+                                                td 2:15 PM
+                                                td $5663.54
+                                            tr
+                                                td 3319
+                                                td 10/21/2013
+                                                td 2:13 PM
+                                                td $943.45
+                                .text-right
+                                    a(href='#')
+                                        | View All Transactions
+                                        i.icon-circle-arrow-right
 
+        //Bootstrap core JavaScript
+        script(src='/static/sb-admin/js/jquery.js')
+        script(src='/static/sb-admin/js/bootstrap.js')
+
+        script(src='//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js')
+        script(src='http://cdn.oesmith.co.uk/morris-0.4.3.min.js')
+        script(src='/static/sb-admin/js/morris/chart-data-morris.js')
+        script(src='/static/sb-admin/js/tablesorter/jquery.tablesorter.js')
+        script(src='/static/sb-admin/js/tablesorter/tables.js')

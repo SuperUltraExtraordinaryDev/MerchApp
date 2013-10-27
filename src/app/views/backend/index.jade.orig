@@ -1,0 +1,60 @@
+!!! 5
+//if lt IE 7
+  html.no-js.lt-ie9.lt-ie8.lt-ie7
+//if IE 7
+  html.no-js.lt-ie9.lt-ie8
+//if IE 8
+  html.no-js.lt-ie9
+// [if gt IE 8] <!
+html.no-js
+  // <![endif]
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width')
+
+    title Merch Admin
+    meta(name='description', content='description')
+    meta(name='keywords', content='keywords')
+
+    link(rel='stylesheet', href='/static/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/static/css/kendo/kendo.common.min.css')
+    link(rel='stylesheet', href='/static/css/kendo/kendo.silver.min.css')
+    link(rel='stylesheet', href='/static/css/admin-main.css')
+
+  body(ng-app='MA.Admin')
+    ng-include(src="'partial/backend/top-menu'")
+
+    .row
+      //ng-include(src="'partial/backend/left-menu'")
+
+      .col-lg-12
+        .container.ng-view
+
+
+    // Scripts go here
+    script(src='/static/js/vendor/modernizr.min.js')
+    script(src='/static/js/vendor/jquery.min.js')
+    script(src='/static/js/vendor/bootstrap.min.js')
+    script(src='/static/js/vendor/angular/angular.min.js')
+    script(src='/static/js/vendor/angular/angular-resource.min.js')
+    script(src='/static/js/vendor/angular/angular-cookies.min.js')
+
+    // App go here
+    // Common
+    script(src='/static/js/app/common/app.js')
+    // Svc
+    script(src='/static/js/app/common/services/products.svc.js')
+    script(src='/static/js/app/common/services/auth.svc.js')
+    // Dir
+    // Ctrl
+    script(src='/static/js/app/common/controllers/login.ctrl.js')
+
+    // Backend
+    script(src='/static/js/app/backend/app.js')
+    // Dir
+    // Ctrl
+    script(src='/static/js/app/backend/controllers/menu.ctrl.js')
+    script(src='/static/js/app/backend/controllers/orders.ctrl.js')
+
+
