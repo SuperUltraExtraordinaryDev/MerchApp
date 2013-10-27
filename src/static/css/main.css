@@ -1,0 +1,61 @@
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-image: url("/static/img/irongrip.png");
+}
+.container {
+  padding: 40px;
+  background-image: url("/static/img/nami.png");
+}
+.top-menu {
+  margin-top: 70px;
+  margin-bottom: 50px;
+  background-color: rgba(0,0,0,0.5);
+}
+.category-item {
+  margin-bottom: 20px;
+}
+.product-item {
+  margin-bottom: 20px;
+}
+.leftShadow {
+  box-shadow: -10px 8px 35px #000;
+  -moz-box-shadow: -10px 8px 35px #000;
+  -webkit-box-shadow: -10px 8px 35px #000;
+  border-radius: 25px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.rightShadow {
+  padding: 0px;
+  box-shadow: 14px 7px 35px #000;
+  -moz-box-shadow: 14px 7px 35px #000;
+  -webkit-box-shadow: 14px 7px 35px #000;
+  border-radius: 25px;
+}
+.title {
+  font-family: 'Montez', cursive;
+  font-size: 75px;
+  text-decoration: overline;
+  color: #c0c0c0;
+}
+.body-content {
+  margin-left: -40px;
+  margin-right: -40px;
+  margin-bottom: -20px;
+}
+.body-wrapper {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.nav-pills li {
+  min-width: 150px;
+  text-align: center;
+}
+@media screen and (max-width: 595px) {
+  .nav-responsive li {
+    float: none;
+  }
+}

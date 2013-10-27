@@ -1,0 +1,161 @@
+.row
+    .well
+        #randomProducts.carousel.slide(data-interval='5000')
+            ol.carousel-indicators
+                li.active(data-target='#randomProducts', data-slide-to='0')
+                li(data-target='#randomProducts', data-slide-to='1')
+                li(data-target='#randomProducts', data-slide-to='2')
+            //Carousel items
+            .carousel-inner
+                .item.active
+                    .row
+                        .col-lg-3.col-6
+                            a.thumbnail(href='#x')
+                                img(src='http://placehold.it/300x200', alt='Image', style='max-width: 100%;')
+                        .col-lg-3.col-6
+                            a.thumbnail(href='#x')
+                                img(src='http://placehold.it/300x200', alt='Image', style='max-width: 100%;')
+                        .col-lg-3.col-6
+                            a.thumbnail(href='#x')
+                                img(src='http://placehold.it/300x200', alt='Image', style='max-width: 100%;')
+                        .col-lg-3.col-6
+                            a.thumbnail(href='#x')
+                                img(src='http://placehold.it/300x200', alt='Image', style='max-width: 100%;')
+
+                .item
+                    .row
+                        .col-lg-3.col-6
+                            a.thumbnail(href='#x')
+                                img(src='http://placehold.it/300x200', alt='Image', style='max-width: 100%;')
+                        .col-lg-3.col-6
+                            a.thumbnail(href='#x')
+                                img(src='http://placehold.it/300x200', alt='Image', style='max-width: 100%;')
+                        .col-lg-3.col-6
+                            a.thumbnail(href='#x')
+                                img(src='http://placehold.it/300x200', alt='Image', style='max-width: 100%;')
+                        .col-lg-3.col-6
+                            a.thumbnail(href='#x')
+                                img(src='http://placehold.it/300x200', alt='Image', style='max-width: 100%;')
+
+                .item
+                    .row
+                        .col-lg-3.col-6
+                            a.thumbnail(href='#x')
+                                img(src='http://placehold.it/300x200', alt='Image', style='max-width: 100%;')
+                        .col-lg-3.col-6
+                            a.thumbnail(href='#x')
+                                img(src='http://placehold.it/300x200', alt='Image', style='max-width: 100%;')
+                        .col-lg-3.col-6
+                            a.thumbnail(href='#x')
+                                img(src='http://placehold.it/300x200', alt='Image', style='max-width: 100%;')
+                        .col-lg-3.col-6
+                            a.thumbnail(href='#x')
+                                img(src='http://placehold.it/300x200', alt='Image', style='max-width: 100%;')
+
+            a.left.carousel-control(href='#randomProducts', data-slide='prev')
+              span.icon-prev
+            a.right.carousel-control(href='#randomProducts', data-slide='next')
+              span.icon-next
+
+
+.row
+  .col-lg-3
+    .list-group
+      a.list-group-item.active(href='#') Category 1
+      a.list-group-item(href='#') Category 2
+      a.list-group-item(href='#') Category 3
+      a.list-group-item(href='#') Category 4
+      a.list-group-item(href='#') Category 5
+
+    .thumbnail.clearfix
+      #newProducts.carousel.slide(data-interval='5000')
+        ol.carousel-indicators
+          li.active(data-target='#newProducts', data-slide-to='0')
+          li(data-target='#newProducts', data-slide-to='1')
+          li(data-target='#newProducts', data-slide-to='2')
+
+        .carousel-inner
+          .item.active
+            a.thumbnail(href='#x')
+              img(src='http://placehold.it/320x200', alt='ALT NAME', style='margin-right: 10px;')
+
+          .item
+            a.thumbnail(href='#x')
+              img(src='http://placehold.it/320x200', alt='ALT NAME', style='margin-right: 10px;')
+
+          .item
+              a.thumbnail(href='#x')
+              img(src='http://placehold.it/320x200', alt='ALT NAME', style='margin-right: 10px;')
+
+      .caption
+          h3 New Products
+          p Description
+
+    br
+
+    .thumbnail.clearfix
+      #bestSellers.carousel.slide(data-interval='5000')
+        ol.carousel-indicators
+          li.active(data-target='#bestSellers', data-slide-to='0')
+          li(data-target='#bestSellers', data-slide-to='1')
+          li(data-target='#bestSellers', data-slide-to='2')
+
+        .carousel-inner
+          .item.active
+            a.thumbnail(href='#x')
+              img(src='http://placehold.it/320x200', alt='ALT NAME', style='margin-right: 10px;')
+
+          .item
+            a.thumbnail(href='#x')
+              img(src='http://placehold.it/320x200', alt='ALT NAME', style='margin-right: 10px;')
+
+          .item
+            a.thumbnail(href='#x')
+              img(src='http://placehold.it/320x200', alt='ALT NAME', style='margin-right: 10px;')
+
+      .caption
+          h3 Best Sellers
+          p Description
+
+    br
+
+    .thumbnail.clearfix
+      .caption
+        h3 Information
+        p Some Information about products and how to make an order.
+
+
+  .col-lg-9
+    .thumbnails
+      .col-lg-12.clearfix.product-item
+        .thumbnail.clearfix
+          img.pull-left.clearfix(src='http://placehold.it/320x200', alt='ALT NAME', style='margin-right: 10px;')
+          .caption
+              a.btn.btn-primary.icon.pull-right(href='http://bootsnipp.com/') Select
+              h4
+                  a(href='#') Luis Felipe Kaufmann
+              small
+                  b RG:
+                  | 99384877
+
+      .col-lg-12.clearfix.product-item
+        .thumbnail.clearfix
+          img.pull-left.clearfix(src='http://placehold.it/320x200', alt='ALT NAME', style='margin-right: 10px;')
+          .caption
+              a.btn.btn-primary.icon.pull-right(href='http://bootsnipp.com/') Select
+              h4
+                  a(href='#') Luis Felipe Kaufmann
+              small
+                  b RG:
+                  | 99384877
+
+      .col-lg-12.clearfix.product-item
+        .thumbnail.clearfix
+          img.pull-left.clearfix(src='http://placehold.it/320x200', alt='ALT NAME', style='margin-right: 10px;')
+          .caption
+              a.btn.btn-primary.icon.pull-right(href='http://bootsnipp.com/') Select
+              h4
+                  a(href='#') Luis Felipe Kaufmann
+              small
+                  b RG:
+                  | 99384877

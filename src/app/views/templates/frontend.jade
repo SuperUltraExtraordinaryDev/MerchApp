@@ -1,0 +1,13 @@
+!!! 5
+html
+head
+  script(type="text/ng-template", id="category-item")
+    .category-item.col-lg-3(ng-repeat="category in items")
+      .thumbnail
+        img(alt='300x200', style='width: 300px; height: 200px;', ng-src="{{category.img_url}}")
+        .caption
+          h3 {{category.title}}
+          p {{category.description}}
+          a(href='/category/{{category._id}}').btn.btn-primary Details
+
+body

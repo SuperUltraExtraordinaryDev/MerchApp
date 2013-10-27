@@ -1,0 +1,35 @@
+!!! 5
+html
+head
+body
+    nav(role='navigation', ng-controller='MenuCtrl', ng-show='CurrentUserName').navbar.navbar-fixed-top.navbar-inverse
+      .navbar-header
+        button(type='button', data-toggle='collapse', data-target='.navbar-admin-collapse').navbar-toggle
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a(href='#/').navbar-brand Merch Admin
+
+      .collapse.navbar-collapse.navbar-admin-collapse
+        ul.nav.navbar-nav
+          li.active
+            a(href='#/categories') Categories
+          li
+            a(href='#/products') Products
+          li.dropdown
+            a(href='#', data-toggle='dropdown').dropdown-toggle Orders
+              b.caret
+            ul.dropdown-menu
+              li
+                a(href='#/orders') New Orders
+              li
+                a(href='#/orders') Sent Orders
+        ul.nav.navbar-nav.pull-right
+          li.dropdown
+            a(href='', data-toggle='dropdown').dropdown-toggle {{CurrentUserName}}
+              b.caret
+            ul.dropdown-menu
+              li
+                a(href='', ng-click='Logout()') Logout
+
+
