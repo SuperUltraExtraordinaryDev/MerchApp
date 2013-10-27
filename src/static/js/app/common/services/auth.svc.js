@@ -55,6 +55,6 @@
     };
 
     authSvc.$inject = ['$http', '$cookies'];
-    angular.module('MA.Common').service('AuthSvc', authSvc);
+    angular.module('ma.common').service('$authSvc', authSvc);
 
 })();

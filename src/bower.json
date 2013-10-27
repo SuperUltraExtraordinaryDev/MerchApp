@@ -1,0 +1,22 @@
+{
+  "name": "MerchApp",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Grievoushead/MerchApp",
+  "authors": [
+    "Grievoushead <sergiy.kozachenko@gmail.com>"
+  ],
+  "description": "eCommerce",
+  "main": "server.js",
+  "keywords": [
+    "eCommerce"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

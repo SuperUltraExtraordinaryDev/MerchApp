@@ -1,13 +1,34 @@
 'use strict';
 
 // Declare app level module which depends on filters, and services
-angular.module('MA.Admin', ['MA.Common'])
-    .config(['$routeProvider', function(routeProvider) {
-        routeProvider.when('/', {templateUrl: '/partial/backend/login', controller: 'LoginCtrl'});
-        routeProvider.when('/orders', {templateUrl: '/partial/backend/orders', controller: 'OrdersCtrl'});
-        routeProvider.when('/categories', {templateUrl: '/partial/backend/orders', controller: 'OrdersCtrl'});
+angular.module('ma.admin', ['ma.common'])
+  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+    $urlRouterProvider.otherwise("/");
+
+    $stateProvider
+      .state('index', {
+        url: "/",
+        templateUrl: "/admin",
+        controller: 'LoginCtrl'
+      })
+      .state('state2', {
+        url: "/state2",
+        templateUrl: "partials/state2.html"
+      })
+      .state('state2.list', {
+        url: "/list",
+        templateUrl: "partials/state2.list.html",
+        controller: function($scope) {
+          $scope.things = ["A", "Set", "Of", "Things"];
+        }
+      })
+  }])
+    /*.config(['$routeProvider', function(routeProvider) {
+        routeProvider.when('/admin', {templateUrl: '/partial/backend/login', controller: 'LoginCtrl'});
+        routeProvider.when('/admin/orders', {templateUrl: '/partial/backend/orders', controller: 'OrdersCtrl'});
+        routeProvider.when('/admin/categories', {templateUrl: '/partial/backend/orders', controller: 'OrdersCtrl'});
     }])
-    .run(['$rootScope', '$location', '$window', 'AuthSvc', function(rootScope, location, $window, authSvc) {
+    .run(['$rootScope', '$location', '$window', '$authSvc', function(rootScope, location, $window, authSvc) {
       rootScope.$on('$locationChangeStart', function(event, next, current) {
 
           // Todo: Set security!
@@ -37,6 +58,5 @@ angular.module('MA.Admin', ['MA.Common'])
                   location.path('/orders');
               }
           }
-
       });
-    }]);
+    }]);*/

@@ -1,0 +1,217 @@
+.row
+    .col-lg-12
+        h1
+            | Dashboard
+            small Statistics Overview
+        ol.breadcrumb
+            li.active
+                i.icon-dashboard
+                | Dashboard
+        .alert.alert-success.alert-dismissable
+            button.close(type='button', data-dismiss='alert', aria-hidden='true') ×
+            | Welcome to SB Admin by
+            a.alert-link(href='http://startbootstrap.com') Start Bootstrap
+            | ! Feel free to use this template for your admin needs! We are using a few different plugins to handle the dynamic tables and charts, so make sure you check out the necessary documentation links provided.
+
+    .row
+        .col-lg-3
+            .panel.panel-info
+                .panel-heading
+                    .row
+                        .col-xs-6
+                            i.icon-comments.icon-5x
+                        .col-xs-6.text-right
+                            p.announcement-heading 456
+                            p.announcement-text New Mentions!
+                a(href='#')
+                    .panel-footer.announcement-bottom
+                        .row
+                            .col-xs-6
+                                | View Mentions
+                            .col-xs-6.text-right
+                                i.icon-circle-arrow-right
+        .col-lg-3
+            .panel.panel-warning
+                .panel-heading
+                    .row
+                        .col-xs-6
+                            i.icon-check.icon-5x
+                        .col-xs-6.text-right
+                            p.announcement-heading 12
+                            p.announcement-text To-Do Items
+                a(href='#')
+                    .panel-footer.announcement-bottom
+                        .row
+                            .col-xs-6
+                                | Complete Tasks
+                            .col-xs-6.text-right
+                                i.icon-circle-arrow-right
+        .col-lg-3
+            .panel.panel-danger
+                .panel-heading
+                    .row
+                        .col-xs-6
+                            i.icon-tasks.icon-5x
+                        .col-xs-6.text-right
+                            p.announcement-heading 18
+                            p.announcement-text Crawl Errors
+                a(href='#')
+                    .panel-footer.announcement-bottom
+                        .row
+                            .col-xs-6
+                                | Fix Issues
+                            .col-xs-6.text-right
+                                i.icon-circle-arrow-right
+        .col-lg-3
+            .panel.panel-success
+                .panel-heading
+                    .row
+                        .col-xs-6
+                            i.icon-comments.icon-5x
+                        .col-xs-6.text-right
+                            p.announcement-heading 56
+                            p.announcement-text New Orders!
+                a(href='#')
+                    .panel-footer.announcement-bottom
+                        .row
+                            .col-xs-6
+                                | Complete Orders
+                            .col-xs-6.text-right
+                                i.icon-circle-arrow-right
+
+    .row
+        .col-lg-12
+            .panel.panel-primary
+                .panel-heading
+                    h3.panel-title
+                        i.icon-bar-chart
+                        | Traffic Statistics: October 1, 2013 - October 31, 2013
+                .panel-body
+                    #morris-chart-area
+
+    .row
+        .col-lg-4
+            .panel.panel-primary
+                .panel-heading
+                    h3.panel-title
+                        i.icon-long-arrow-right
+                        | Traffic Sources: October 1, 2013 - October 31, 2013
+                .panel-body
+                    #morris-chart-donut
+                    .text-right
+                        a(href='#')
+                            | View Details
+                            i.icon-circle-arrow-right
+        .col-lg-4
+            .panel.panel-primary
+                .panel-heading
+                    h3.panel-title
+                        i.icon-time
+                        | Recent Activity
+                .panel-body
+                    .list-group
+                        a.list-group-item(href='#')
+                            span.badge just now
+                            i.icon-calendar
+                            | Calendar updated
+                        a.list-group-item(href='#')
+                            span.badge 4 minutes ago
+                            i.icon-comment-alt
+                            | Commented on a post
+                        a.list-group-item(href='#')
+                            span.badge 23 minutes ago
+                            i.icon-truck
+                            | Order 392 shipped
+                        a.list-group-item(href='#')
+                            span.badge 46 minutes ago
+                            i.icon-money
+                            | Invoice 653 has been paid
+                        a.list-group-item(href='#')
+                            span.badge 1 hour ago
+                            i.icon-user
+                            | A new user has been added
+                        a.list-group-item(href='#')
+                            span.badge 2 hours ago
+                            i.icon-check
+                            | Completed task: "pick up dry cleaning"
+                        a.list-group-item(href='#')
+                            span.badge yesterday
+                            i.icon-globe
+                            | Saved the world
+                        a.list-group-item(href='#')
+                            span.badge two days ago
+                            i.icon-check
+                            | Completed task: "fix error on sales page"
+                    .text-right
+                        a(href='#')
+                            | View All Activity
+                            i.icon-circle-arrow-right
+        .col-lg-4
+            .panel.panel-primary
+                .panel-heading
+                    h3.panel-title
+                        i.icon-money
+                        | Recent Transactions
+                .panel-body
+                    .table-responsive
+                        table.table.table-bordered.table-hover.table-striped.tablesorter
+                            thead
+                                tr
+                                    th
+                                        | Order #
+                                        i.icon-sort
+                                    th
+                                        | Order Date
+                                        i.icon-sort
+                                    th
+                                        | Order Time
+                                        i.icon-sort
+                                    th
+                                        | Amount (USD)
+                                        i.icon-sort
+                            tbody
+                                tr
+                                    td 3326
+                                    td 10/21/2013
+                                    td 3:29 PM
+                                    td $321.33
+                                tr
+                                    td 3325
+                                    td 10/21/2013
+                                    td 3:20 PM
+                                    td $234.34
+                                tr
+                                    td 3324
+                                    td 10/21/2013
+                                    td 3:03 PM
+                                    td $724.17
+                                tr
+                                    td 3323
+                                    td 10/21/2013
+                                    td 3:00 PM
+                                    td $23.71
+                                tr
+                                    td 3322
+                                    td 10/21/2013
+                                    td 2:49 PM
+                                    td $8345.23
+                                tr
+                                    td 3321
+                                    td 10/21/2013
+                                    td 2:23 PM
+                                    td $245.12
+                                tr
+                                    td 3320
+                                    td 10/21/2013
+                                    td 2:15 PM
+                                    td $5663.54
+                                tr
+                                    td 3319
+                                    td 10/21/2013
+                                    td 2:13 PM
+                                    td $943.45
+                    .text-right
+                        a(href='#')
+                            | View All Transactions
+                            i.icon-circle-arrow-right
+
