@@ -3,25 +3,21 @@
 // Declare app level module which depends on filters, and services
 angular.module('ma.admin', ['ma.common'])
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
-    $urlRouterProvider.otherwise("/");
 
     $stateProvider
+      .state('tables', {
+        url: "/admin/tables",
+        templateUrl: "/partial/backend/tables"
+      })
+      .state('dashboard', {
+        url: "/admin/dashboard",
+        templateUrl: "/partial/backend/dashboard"
+      })
       .state('index', {
         url: "/",
-        templateUrl: "/admin",
-        controller: 'LoginCtrl'
-      })
-      .state('state2', {
-        url: "/state2",
-        templateUrl: "partials/state2.html"
-      })
-      .state('state2.list', {
-        url: "/list",
-        templateUrl: "partials/state2.list.html",
-        controller: function($scope) {
-          $scope.things = ["A", "Set", "Of", "Things"];
-        }
-      })
+        template: ""
+      });
+
   }])
     /*.config(['$routeProvider', function(routeProvider) {
         routeProvider.when('/admin', {templateUrl: '/partial/backend/login', controller: 'LoginCtrl'});

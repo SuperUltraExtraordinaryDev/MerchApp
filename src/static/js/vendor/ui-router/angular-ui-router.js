@@ -1344,6 +1344,7 @@ function $StateRefDirective($state) {
   return {
     restrict: 'A',
     link: function(scope, element, attrs) {
+      debugger
       var ref = parseStateRef(attrs.uiSref);
       var params = null, url = null, base = $state.$current;
       var isForm = element[0].nodeName === "FORM";

@@ -14,7 +14,7 @@ head
 
     link(href='http://cdn.oesmith.co.uk/morris-0.4.3.min.css', rel='stylesheet')
     body
-        #wrapper
+        #wrapper(data-ng-app='ma.admin')
 
             nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
 
@@ -25,13 +25,13 @@ head
                         span.icon-bar
                         span.icon-bar
                         span.icon-bar
-                    a.navbar-brand(href='index.html') Merch Admin
+                    a.navbar-brand(ui-sref='index') Merch Admin
 
                 //Collect the nav links, forms, and other content for toggling
                 .collapse.navbar-collapse.navbar-ex1-collapse
                     ul.nav.navbar-nav.side-nav
                         li.active
-                            a(href='index.html')
+                            a(ui-sref="dashboard")
                                 i.icon-dashboard
                                 |&nbsp;Dashboard
                         li
@@ -39,7 +39,7 @@ head
                                 i.icon-bar-chart
                                 |&nbsp;Charts
                         li
-                            a(href='tables.html')
+                            a(ui-sref='tables')
                                 i.icon-table
                                 |&nbsp;Tables
                         li
@@ -178,7 +178,7 @@ head
                                         i.icon-power-off
                                         | Log Out
 
-            #page-wrapper(data-ng-app='ma.admin')
+            #page-wrapper
                 .ui-view
 
 
@@ -195,7 +195,7 @@ head
         script(src='/static/js/vendor/angular/angular.min.js')
         script(src='/static/js/vendor/angular/angular-resource.min.js')
         script(src='/static/js/vendor/angular/angular-cookies.min.js')
-        script(src='/static/js/vendor/ui-router/angular-ui-router.min.js')
+        script(src='/static/js/vendor/ui-router/angular-ui-router.js')
 
         script(src='/static/js/app/common/app.js')
         script(src='/static/js/app/common/services/auth.svc.js')
